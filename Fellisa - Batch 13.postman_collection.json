@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "53c32109-071e-42b4-bc94-ba0f1f2c2458",
+		"name": "Fellisa - Batch 13",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49517857",
+		"_collection_link": "https://rievaldafellisa-4585183.postman.co/workspace/Rievalda-Fellisa's-Workspace~2685a96d-02c9-4d69-8c74-84080f8192b2/collection/49517857-53c32109-071e-42b4-bc94-ba0f1f2c2458?action=share&source=collection_link&creator=49517857"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Assert Status Code\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Assert Response Body\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzY1NDU4NjU1LCJleHAiOjE3NjU0NjIyNTV9.zz7GWxLy6lJNGB5viN27jpCXQHDwhuyrEsyyR4IQmeA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://belajar-bareng.onrender.com/api/login",
+					"protocol": "https",
+					"host": [
+						"belajar-bareng",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Assert Status Code\r",
+							"pm.test(\"Status code is 200 or 201\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});\r",
+							"\r",
+							"// Assert Response Body\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzY2MDU2MjYzLCJleHAiOjE3NjYwNTk4NjN9.y_VKcWlhp0phzDuMkXnwGlv6CGCd8v1DB4O9I46-pnY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Fellisa\",\r\n    \"age\": 21\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://belajar-bareng.onrender.com/api/add-user",
+					"protocol": "https",
+					"host": [
+						"belajar-bareng",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"add-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Assert Status Code\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Assert Response Body\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzY2MDY4Mzk4LCJleHAiOjE3NjYwNzE5OTh9.A-qQTWpv-yeIXi0LZTJVqqED__Xl6mfFxJRUYHrCdSc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://belajar-bareng.onrender.com/api/users",
+					"protocol": "https",
+					"host": [
+						"belajar-bareng",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzY2MDU2MjYzLCJleHAiOjE3NjYwNTk4NjN9.y_VKcWlhp0phzDuMkXnwGlv6CGCd8v1DB4O9I46-pnY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://belajar-bareng.onrender.com/api/delete-user/6943e4753d4cf7b09ef3f262",
+					"protocol": "https",
+					"host": [
+						"belajar-bareng",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"delete-user",
+						"6943e4753d4cf7b09ef3f262"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "umurs",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
