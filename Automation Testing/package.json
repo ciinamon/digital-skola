@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests --reporter mochawesome",
+    "test-login": "mocha tests/login.test.js --reporter mochawesome",
+    "test-jsonSchema": "mocha tests/mocha tests/jsonSchema.test.js --reporter mochawesome"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "chai": "^6.2.1",
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.4"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1"
+  }
+}

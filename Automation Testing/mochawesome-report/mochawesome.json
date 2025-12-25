@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-12-24T01:22:33.655Z",
+    "end": "2025-12-24T01:22:33.674Z",
+    "duration": 19,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "11f2e346-70e9-4878-930a-4303be6e6666",
+      "title": "",
+      "fullFile": "D:\\STUDY\\QA\\Digital Skola\\Test\\tests\\jsonSchema.test.js",
+      "file": "\\tests\\jsonSchema.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f8251a21-b1bc-496f-abcf-dc71c7d62241",
+          "title": "Validasi JSON Schema",
+          "fullFile": "D:\\STUDY\\QA\\Digital Skola\\Test\\tests\\jsonSchema.test.js",
+          "file": "\\tests\\jsonSchema.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should validate response against schema",
+              "fullTitle": "Validasi JSON Schema should validate response against schema",
+              "timedOut": false,
+              "duration": 16,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const responseData = {\n  status: 200,\n  token:\n    \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzY1NTYwMzcwLCJleHAiOjE3NjU1NjM5NzB9.lqYMwa_6VzUNRsI93sbd58zQowPqPKhVjiheh6pTLT4\",\n  message: \"Login successful\",\n};\nconst schema = {\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"title\": \"Generated schema for Root\",\n  \"type\": \"object\",\n  \"properties\": {\n\"status\": {\n  \"type\": \"number\"\n},\n\"token\": {\n  \"type\": \"string\"\n},\n\"message\": {\n  \"type\": \"string\"\n}\n  },\n  \"required\": [\n\"status\",\n\"token\",\n\"message\"\n  ]\n};\nconst ajv = new Ajv({ allErrors: true });\nconst validate = ajv.compile(schema);\nconst isValid = validate(responseData);\nconst errorMessage = validate.errors\n  ? JSON.stringify(validate.errors, null, 2)\n  : null;\nexpect(isValid, errorMessage).to.be.true;",
+              "err": {},
+              "uuid": "c01f7dba-f6d0-423d-946e-adf2e95ae200",
+              "parentUUID": "f8251a21-b1bc-496f-abcf-dc71c7d62241",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c01f7dba-f6d0-423d-946e-adf2e95ae200"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.5"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
