@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-01-10T08:05:20.700Z",
+    "end": "2026-01-10T08:05:22.408Z",
+    "duration": 1708,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5761017b-9900-4887-82dc-0929cb77107f",
+      "title": "",
+      "fullFile": "D:\\STUDY\\QA\\Digital Skola\\Tugas\\Tugas Sesi 10 - Advance Web UI Automation Part 1\\test\\saucedemo-advance.js",
+      "file": "\\test\\saucedemo-advance.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a47e16c6-f282-499f-8fef-798a1968f805",
+          "title": "Tugas Sesi 10 - Advance Part 1 (Headless & Hooks)",
+          "fullFile": "D:\\STUDY\\QA\\Digital Skola\\Tugas\\Tugas Sesi 10 - Advance Web UI Automation Part 1\\test\\saucedemo-advance.js",
+          "file": "\\test\\saucedemo-advance.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Tugas Sesi 10 - Advance Part 1 (Headless & Hooks)\"",
+              "fullTitle": "Tugas Sesi 10 - Advance Part 1 (Headless & Hooks) \"before all\" hook in \"Tugas Sesi 10 - Advance Part 1 (Headless & Hooks)\"",
+              "timedOut": false,
+              "duration": 1073,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Konfigurasi Headless Mode \nlet options = new chrome.Options();\noptions.addArguments('--headless'); // Browser tidak akan muncul di layar\noptions.addArguments('--disable-gpu');\ndriver = await new Builder()\n    .forBrowser('chrome')\n    .setChromeOptions(options)\n    .build();",
+              "err": {},
+              "uuid": "25c8a0ba-175e-41eb-97b1-5446bce81c4b",
+              "parentUUID": "a47e16c6-f282-499f-8fef-798a1968f805",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Tugas Sesi 10 - Advance Part 1 (Headless & Hooks)\"",
+              "fullTitle": "Tugas Sesi 10 - Advance Part 1 (Headless & Hooks) \"after all\" hook in \"Tugas Sesi 10 - Advance Part 1 (Headless & Hooks)\"",
+              "timedOut": false,
+              "duration": 31,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "ae0bf640-c976-4b31-a83e-0921aa505c5e",
+              "parentUUID": "a47e16c6-f282-499f-8fef-798a1968f805",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Test Case 1: Sukses Login di Saucedemo",
+              "fullTitle": "Tugas Sesi 10 - Advance Part 1 (Headless & Hooks) Test Case 1: Sukses Login di Saucedemo",
+              "timedOut": false,
+              "duration": 537,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get('https://www.saucedemo.com');\n\nawait driver.findElement(By.id('user-name')).sendKeys('standard_user');\nawait driver.findElement(By.id('password')).sendKeys('secret_sauce');\nawait driver.findElement(By.id('login-button')).click();\nlet title = await driver.getTitle();\nassert.strictEqual(title, 'Swag Labs');",
+              "err": {},
+              "uuid": "517aaa03-442c-42de-9e05-f7068b535adc",
+              "parentUUID": "a47e16c6-f282-499f-8fef-798a1968f805",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test Case 2: Tambah Produk ke Keranjang",
+              "fullTitle": "Tugas Sesi 10 - Advance Part 1 (Headless & Hooks) Test Case 2: Tambah Produk ke Keranjang",
+              "timedOut": false,
+              "duration": 61,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Karena sudah login di TC1, kita lanjut cari produk\nawait driver.findElement(By.id('add-to-cart-sauce-labs-backpack')).click();\n\n// Cek apakah badge keranjang muncul angka 1\nlet cartBadge = await driver.findElement(By.className('shopping_cart_badge')).getText();\nassert.strictEqual(cartBadge, '1');",
+              "err": {},
+              "uuid": "bfacfade-c7fd-4635-99df-59bb90d74a4f",
+              "parentUUID": "a47e16c6-f282-499f-8fef-798a1968f805",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "517aaa03-442c-42de-9e05-f7068b535adc",
+            "bfacfade-c7fd-4635-99df-59bb90d74a4f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 598,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.5"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
