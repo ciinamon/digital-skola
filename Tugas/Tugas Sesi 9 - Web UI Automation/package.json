@@ -1,0 +1,20 @@
+{
+  "name": "tugas-sesi-9---web-ui-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/saucedemo-test.js",
+    "test-mochawesome": "mocha test/saucedemo-test.js --reporter mochawesome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.4",
+    "selenium-webdriver": "^4.39.0"
+  }
+}
